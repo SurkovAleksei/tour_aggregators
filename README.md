@@ -10,6 +10,6 @@
   - Matplotlib - Для визуализации данных.
 ---
 БД
-id	name	price	dates	url	location	tour_type rating 	rating_count	image	description	created_at
+id |	name |	price |	dates |	url |	location |	tour_type | rating |	rating_count |	image |	description |	created_at
 
 
