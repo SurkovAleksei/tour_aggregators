@@ -9,3 +9,7 @@
   - Scikit-learn - Для реализации моделей машинного обучения и анализа данных.
   - Matplotlib - Для визуализации данных.
 ---
+БД
+id	name	price	dates	url	location	tour_type rating 	rating_count	image	description	created_at
+
+
