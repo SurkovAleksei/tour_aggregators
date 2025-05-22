@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Результаты поиска</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Оптимальные туры с {{ start_date }} по {{ end_date }}</h1>
+        
+        {% if message %}
+            <p class="message">{{ message }}</p>
+        {% else %}
+            <div class="tours-list">
+                {% for tour in tours %}
+                <div class="tour-card">
+                    <h3>{{ tour.name }}</h3>
+                    <p><strong>Даты:</strong> {{ tour.dates }}</p>
+                    <p><strong>Цена:</strong> {{ tour.price }} RUB</p>
+                    <p><strong>Оптимальность:</strong> {{ "%.2f"|format(tour.price_score*100) }}%</p>
+                    <a href="{{ tour.url }}" target="_blank" class="btn">Подробнее</a>
+                </div>
+                {% endfor %}
+            </div>
+        {% endif %}
+        
+        <a href="{{ url_for('index') }}" class="btn">Новый поиск</a>
+    </div>
+</body>
+</html>
