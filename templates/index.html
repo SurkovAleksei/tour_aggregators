@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Подбор оптимальных туров</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Подбор оптимальных туров</h1>
+        <form action="/find_tours" method="post">
+            <div class="form-group">
+                <label for="start_date">Дата начала тура:</label>
+                <input type="date" id="start_date" name="start_date" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="end_date">Дата окончания тура:</label>
+                <input type="date" id="end_date" name="end_date" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="top_n">Количество туров для показа:</label>
+                <select id="top_n" name="top_n">
+                    <option value="3">3</option>
+                    <option value="5" selected>5</option>
+                    <option value="10">10</option>
+                </select>
+            </div>
+            
+            <button type="submit" class="btn">Найти туры</button>
+        </form>
+    </div>
+</body>
+</html>
